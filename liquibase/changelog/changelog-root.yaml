@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - includeAll:
+      path: 2025-01-24-users-table
+      relativeToChangelogFile: true
