@@ -1,0 +1,11 @@
+services:
+  bigquery-liquibase:
+    container_name: bigquery-liquibase
+    build:
+      context: ./bigquery-liquibase
+      dockerfile: Dockerfile
+    env_file:
+      - ./bigquery-liquibase/.env
+    volumes:
+      - ${GOOGLE_APPLICATION_CREDENTIALS:-~/.config/gcloud/application_default_credentials.json}:/liquibase/.config/gcloud/application_default_credentials.json:ro
+      - ./bigquery-liquibase/changelog:/liquibase/changelog
